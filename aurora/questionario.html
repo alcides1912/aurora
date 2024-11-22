@@ -1,0 +1,689 @@
+import '/flutter_flow/flutter_flow_icon_button.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+
+import 'questionario_model.dart';
+export 'questionario_model.dart';
+
+class QuestionarioWidget extends StatefulWidget {
+const QuestionarioWidget({super.key});
+
+@override
+State<QuestionarioWidget> createState() => _QuestionarioWidgetState();
+  }
+
+  class _QuestionarioWidgetState extends State<QuestionarioWidget> {
+    late QuestionarioModel _model;
+
+    final scaffoldKey = GlobalKey<ScaffoldState>();
+
+      @override
+      void initState() {
+      super.initState();
+      _model = createModel(context, () => QuestionarioModel());
+
+      WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
+      }
+
+      @override
+      void dispose() {
+      _model.dispose();
+
+      super.dispose();
+      }
+
+      @override
+      Widget build(BuildContext context) {
+      return GestureDetector(
+      onTap: () => FocusScope.of(context).unfocus(),
+      child: Scaffold(
+      key: scaffoldKey,
+      backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
+      body: Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+      Container(
+      width: MediaQuery.sizeOf(context).width,
+      height: MediaQuery.sizeOf(context).height * 1,
+      decoration: BoxDecoration(
+      gradient: LinearGradient(
+      colors: [Color(0xFF4B39EF), Color(0xFF3F51B5)],
+      stops: [0, 1],
+      begin: AlignmentDirectional(0, -1),
+      end: AlignmentDirectional(0, 1),
+      ),
+      ),
+      child: Padding(
+      padding: EdgeInsetsDirectional.fromSTEB(24, 24, 24, 0),
+      child: SingleChildScrollView(
+      child: Column(
+      mainAxisSize: MainAxisSize.min,
+      mainAxisAlignment: MainAxisAlignment.end,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+      Row(
+      mainAxisSize: MainAxisSize.max,
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+      FlutterFlowIconButton(
+      borderRadius: 20,
+      buttonSize: 40,
+      fillColor: Color(0x33FFFFFF),
+      icon: Icon(
+      Icons.arrow_back,
+      color: Colors.white,
+      size: 24,
+      ),
+      onPressed: () async {
+      context.goNamed(
+      'menu',
+      extra: <String, dynamic>{
+        kTransitionInfoKey: TransitionInfo(
+        hasTransition: true,
+        transitionType:
+        PageTransitionType.leftToRight,
+        duration: Duration(milliseconds: 500),
+        ),
+        },
+        );
+        },
+        ),
+        ],
+        ),
+        Align(
+        alignment: AlignmentDirectional(0, 0),
+        child: Text(
+        'Teste Mchat',
+        textAlign: TextAlign.center,
+        style: FlutterFlowTheme.of(context)
+        .headlineSmall
+        .override(
+        fontFamily: 'Readex Pro',
+        color: Colors.white,
+        letterSpacing: 0.0,
+        fontWeight: FontWeight.w600,
+        ),
+        ),
+        ),
+        Padding(
+        padding: EdgeInsetsDirectional.fromSTEB(0, 15, 0, 0),
+        child: Material(
+        color: Colors.transparent,
+        elevation: 4,
+        shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(16),
+        ),
+        child: Container(
+        width: MediaQuery.sizeOf(context).width,
+        decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(16),
+        ),
+        child: Padding(
+        padding: EdgeInsetsDirectional.fromSTEB(
+        20, 20, 20, 20),
+        child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+        Text(
+        'Responda às seguintes perguntas com Sim ou Não:',
+        style: FlutterFlowTheme.of(context)
+        .bodyLarge
+        .override(
+        fontFamily: 'Inter',
+        color: FlutterFlowTheme.of(context)
+        .primaryText,
+        letterSpacing: 0.0,
+        fontWeight: FontWeight.w500,
+        ),
+        ),
+        ListView(
+        padding: EdgeInsets.zero,
+        primary: false,
+        shrinkWrap: true,
+        scrollDirection: Axis.vertical,
+        children: [
+        Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+        Text(
+        '1. Você se sente confiante ao falar em público?',
+        style: FlutterFlowTheme.of(context)
+        .bodyMedium
+        .override(
+        fontFamily: 'Inter',
+        color: FlutterFlowTheme.of(
+        context)
+        .primaryText,
+        letterSpacing: 0.0,
+        ),
+        ),
+        Row(
+        mainAxisSize: MainAxisSize.max,
+        mainAxisAlignment:
+        MainAxisAlignment.start,
+        children: [
+        Container(
+        width: 80,
+        height: 40,
+        decoration: BoxDecoration(
+        color: Color(0xFFE3F2FD),
+        borderRadius:
+        BorderRadius.circular(20),
+        ),
+        child: Align(
+        alignment:
+        AlignmentDirectional(
+        0, 0),
+        child: Padding(
+        padding:
+        EdgeInsetsDirectional
+        .fromSTEB(
+        8, 0, 8, 0),
+        child: Text(
+        'Sim',
+        textAlign:
+        TextAlign.center,
+        style: FlutterFlowTheme
+        .of(context)
+        .bodyMedium
+        .override(
+        fontFamily: 'Inter',
+        color: Color(
+        0xFF1565C0),
+        letterSpacing: 0.0,
+        ),
+        ),
+        ),
+        ),
+        ),
+        Container(
+        width: 80,
+        height: 40,
+        decoration: BoxDecoration(
+        color: Color(0xFFFFEBEE),
+        borderRadius:
+        BorderRadius.circular(20),
+        ),
+        child: Align(
+        alignment:
+        AlignmentDirectional(
+        0, 0),
+        child: Padding(
+        padding:
+        EdgeInsetsDirectional
+        .fromSTEB(
+        8, 0, 8, 0),
+        child: Text(
+        'Não',
+        textAlign:
+        TextAlign.center,
+        style: FlutterFlowTheme
+        .of(context)
+        .bodyMedium
+        .override(
+        fontFamily: 'Inter',
+        color: Color(
+        0xFFC62828),
+        letterSpacing: 0.0,
+        ),
+        ),
+        ),
+        ),
+        ),
+        ].divide(SizedBox(width: 16)),
+        ),
+        ].divide(SizedBox(height: 8)),
+        ),
+        Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+        Text(
+        '2. Você pratica exercícios regularmente?',
+        style: FlutterFlowTheme.of(context)
+        .bodyMedium
+        .override(
+        fontFamily: 'Inter',
+        color: FlutterFlowTheme.of(
+        context)
+        .primaryText,
+        letterSpacing: 0.0,
+        ),
+        ),
+        Row(
+        mainAxisSize: MainAxisSize.max,
+        mainAxisAlignment:
+        MainAxisAlignment.start,
+        children: [
+        Container(
+        width: 80,
+        height: 40,
+        decoration: BoxDecoration(
+        color: Color(0xFFE3F2FD),
+        borderRadius:
+        BorderRadius.circular(20),
+        ),
+        child: Align(
+        alignment:
+        AlignmentDirectional(
+        0, 0),
+        child: Padding(
+        padding:
+        EdgeInsetsDirectional
+        .fromSTEB(
+        8, 0, 8, 0),
+        child: Text(
+        'Sim',
+        textAlign:
+        TextAlign.center,
+        style: FlutterFlowTheme
+        .of(context)
+        .bodyMedium
+        .override(
+        fontFamily: 'Inter',
+        color: Color(
+        0xFF1565C0),
+        letterSpacing: 0.0,
+        ),
+        ),
+        ),
+        ),
+        ),
+        Container(
+        width: 80,
+        height: 40,
+        decoration: BoxDecoration(
+        color: Color(0xFFFFEBEE),
+        borderRadius:
+        BorderRadius.circular(20),
+        ),
+        child: Align(
+        alignment:
+        AlignmentDirectional(
+        0, 0),
+        child: Padding(
+        padding:
+        EdgeInsetsDirectional
+        .fromSTEB(
+        8, 0, 8, 0),
+        child: Text(
+        'Não',
+        textAlign:
+        TextAlign.center,
+        style: FlutterFlowTheme
+        .of(context)
+        .bodyMedium
+        .override(
+        fontFamily: 'Inter',
+        color: Color(
+        0xFFC62828),
+        letterSpacing: 0.0,
+        ),
+        ),
+        ),
+        ),
+        ),
+        ].divide(SizedBox(width: 16)),
+        ),
+        ].divide(SizedBox(height: 8)),
+        ),
+        Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+        Text(
+        '3. Você costuma dormir 8 horas por noite?',
+        style: FlutterFlowTheme.of(context)
+        .bodyMedium
+        .override(
+        fontFamily: 'Inter',
+        color: FlutterFlowTheme.of(
+        context)
+        .primaryText,
+        letterSpacing: 0.0,
+        ),
+        ),
+        Row(
+        mainAxisSize: MainAxisSize.max,
+        mainAxisAlignment:
+        MainAxisAlignment.start,
+        children: [
+        Container(
+        width: 80,
+        height: 40,
+        decoration: BoxDecoration(
+        color: Color(0xFFE3F2FD),
+        borderRadius:
+        BorderRadius.circular(20),
+        ),
+        child: Align(
+        alignment:
+        AlignmentDirectional(
+        0, 0),
+        child: Padding(
+        padding:
+        EdgeInsetsDirectional
+        .fromSTEB(
+        8, 0, 8, 0),
+        child: Text(
+        'Sim',
+        textAlign:
+        TextAlign.center,
+        style: FlutterFlowTheme
+        .of(context)
+        .bodyMedium
+        .override(
+        fontFamily: 'Inter',
+        color: Color(
+        0xFF1565C0),
+        letterSpacing: 0.0,
+        ),
+        ),
+        ),
+        ),
+        ),
+        Align(
+        alignment:
+        AlignmentDirectional(0, 0),
+        child: Container(
+        width: 80,
+        height: 40,
+        decoration: BoxDecoration(
+        color: Color(0xFFFFEBEE),
+        borderRadius:
+        BorderRadius.circular(
+        20),
+        ),
+        child: Align(
+        alignment:
+        AlignmentDirectional(
+        0, 0),
+        child: Padding(
+        padding:
+        EdgeInsetsDirectional
+        .fromSTEB(
+        8, 0, 8, 0),
+        child: Text(
+        'Não',
+        textAlign:
+        TextAlign.center,
+        style:
+        FlutterFlowTheme.of(
+        context)
+        .bodyMedium
+        .override(
+        fontFamily:
+        'Inter',
+        color: Color(
+        0xFFC62828),
+        letterSpacing:
+        0.0,
+        ),
+        ),
+        ),
+        ),
+        ),
+        ),
+        ].divide(SizedBox(width: 16)),
+        ),
+        ].divide(SizedBox(height: 8)),
+        ),
+        Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+        Text(
+        '4. Você lê livros com frequência?',
+        style: FlutterFlowTheme.of(context)
+        .bodyMedium
+        .override(
+        fontFamily: 'Inter',
+        color: FlutterFlowTheme.of(
+        context)
+        .primaryText,
+        letterSpacing: 0.0,
+        ),
+        ),
+        Row(
+        mainAxisSize: MainAxisSize.max,
+        mainAxisAlignment:
+        MainAxisAlignment.start,
+        children: [
+        Container(
+        width: 80,
+        height: 40,
+        decoration: BoxDecoration(
+        color: Color(0xFFE3F2FD),
+        borderRadius:
+        BorderRadius.circular(20),
+        ),
+        child: Align(
+        alignment:
+        AlignmentDirectional(
+        0, 0),
+        child: Padding(
+        padding:
+        EdgeInsetsDirectional
+        .fromSTEB(
+        8, 0, 8, 0),
+        child: Text(
+        'Sim',
+        textAlign:
+        TextAlign.center,
+        style: FlutterFlowTheme
+        .of(context)
+        .bodyMedium
+        .override(
+        fontFamily: 'Inter',
+        color: Color(
+        0xFF1565C0),
+        letterSpacing: 0.0,
+        ),
+        ),
+        ),
+        ),
+        ),
+        Container(
+        width: 80,
+        height: 40,
+        decoration: BoxDecoration(
+        color: Color(0xFFFFEBEE),
+        borderRadius:
+        BorderRadius.circular(20),
+        ),
+        child: Align(
+        alignment:
+        AlignmentDirectional(
+        0, 0),
+        child: Padding(
+        padding:
+        EdgeInsetsDirectional
+        .fromSTEB(
+        8, 0, 8, 0),
+        child: Text(
+        'Não',
+        textAlign:
+        TextAlign.center,
+        style: FlutterFlowTheme
+        .of(context)
+        .bodyMedium
+        .override(
+        fontFamily: 'Inter',
+        color: Color(
+        0xFFC62828),
+        letterSpacing: 0.0,
+        ),
+        ),
+        ),
+        ),
+        ),
+        ].divide(SizedBox(width: 16)),
+        ),
+        ].divide(SizedBox(height: 8)),
+        ),
+        Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+        Text(
+        '5. Você se considera uma pessoa organizada?',
+        style: FlutterFlowTheme.of(context)
+        .bodyMedium
+        .override(
+        fontFamily: 'Inter',
+        color: FlutterFlowTheme.of(
+        context)
+        .primaryText,
+        letterSpacing: 0.0,
+        ),
+        ),
+        Row(
+        mainAxisSize: MainAxisSize.max,
+        mainAxisAlignment:
+        MainAxisAlignment.start,
+        children: [
+        Container(
+        width: 80,
+        height: 40,
+        decoration: BoxDecoration(
+        color: Color(0xFFE3F2FD),
+        borderRadius:
+        BorderRadius.circular(20),
+        ),
+        child: Align(
+        alignment:
+        AlignmentDirectional(
+        0, 0),
+        child: Padding(
+        padding:
+        EdgeInsetsDirectional
+        .fromSTEB(
+        8, 0, 8, 0),
+        child: Text(
+        'Sim',
+        textAlign:
+        TextAlign.center,
+        style: FlutterFlowTheme
+        .of(context)
+        .bodyMedium
+        .override(
+        fontFamily: 'Inter',
+        color: Color(
+        0xFF1565C0),
+        letterSpacing: 0.0,
+        ),
+        ),
+        ),
+        ),
+        ),
+        Container(
+        width: 80,
+        height: 40,
+        decoration: BoxDecoration(
+        color: Color(0xFFFFEBEE),
+        borderRadius:
+        BorderRadius.circular(20),
+        ),
+        child: Align(
+        alignment:
+        AlignmentDirectional(
+        0, 0),
+        child: Padding(
+        padding:
+        EdgeInsetsDirectional
+        .fromSTEB(
+        8, 0, 8, 0),
+        child: Text(
+        'Não',
+        textAlign:
+        TextAlign.center,
+        style: FlutterFlowTheme
+        .of(context)
+        .bodyMedium
+        .override(
+        fontFamily: 'Inter',
+        color: Color(
+        0xFFC62828),
+        letterSpacing: 0.0,
+        ),
+        ),
+        ),
+        ),
+        ),
+        ].divide(SizedBox(width: 16)),
+        ),
+        ].divide(SizedBox(height: 8)),
+        ),
+        ].divide(SizedBox(height: 16)),
+        ),
+        Text(
+        '... (Perguntas 6-20 seguiriam o mesmo padrão)',
+        style: FlutterFlowTheme.of(context)
+        .bodySmall
+        .override(
+        fontFamily: 'Inter',
+        color: FlutterFlowTheme.of(context)
+        .secondaryText,
+        letterSpacing: 0.0,
+        ),
+        ),
+        ].divide(SizedBox(height: 16)),
+        ),
+        ),
+        ),
+        ),
+        ),
+        ].divide(SizedBox(height: 24)),
+        ),
+        ),
+        ),
+        ),
+        Material(
+        color: Colors.transparent,
+        elevation: 8,
+        child: Container(
+        width: MediaQuery.sizeOf(context).width,
+        height: 80,
+        decoration: BoxDecoration(
+        color: Colors.white,
+        ),
+        child: Padding(
+        padding: EdgeInsetsDirectional.fromSTEB(16, 24, 16, 24),
+        child: Row(
+        mainAxisSize: MainAxisSize.max,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+        Text(
+        '20 de 20 respondidas',
+        style: FlutterFlowTheme.of(context).bodyMedium.override(
+        fontFamily: 'Inter',
+        color: FlutterFlowTheme.of(context).primaryText,
+        letterSpacing: 0.0,
+        ),
+        ),
+        FlutterFlowIconButton(
+        borderRadius: 28,
+        buttonSize: 56,
+        fillColor: FlutterFlowTheme.of(context).primary,
+        icon: Icon(
+        Icons.save,
+        color: Colors.white,
+        size: 24,
+        ),
+        onPressed: () {
+        print('IconButton pressed ...');
+        },
+        ),
+        ],
+        ),
+        ),
+        ),
+        ),
+        ],
+        ),
+        ),
+        );
+        }
+        }

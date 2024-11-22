@@ -1,0 +1,600 @@
+import '/flutter_flow/flutter_flow_icon_button.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+
+import 'lista_categorias_model.dart';
+export 'lista_categorias_model.dart';
+
+class ListaCategoriasWidget extends StatefulWidget {
+const ListaCategoriasWidget({super.key});
+
+@override
+State<ListaCategoriasWidget> createState() => _ListaCategoriasWidgetState();
+  }
+
+  class _ListaCategoriasWidgetState extends State<ListaCategoriasWidget> {
+    late ListaCategoriasModel _model;
+
+    final scaffoldKey = GlobalKey<ScaffoldState>();
+
+      @override
+      void initState() {
+      super.initState();
+      _model = createModel(context, () => ListaCategoriasModel());
+
+      WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
+      }
+
+      @override
+      void dispose() {
+      _model.dispose();
+
+      super.dispose();
+      }
+
+      @override
+      Widget build(BuildContext context) {
+      return GestureDetector(
+      onTap: () => FocusScope.of(context).unfocus(),
+      child: Scaffold(
+      key: scaffoldKey,
+      backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
+      body: SafeArea(
+      top: true,
+      child: Stack(
+      children: [
+      SingleChildScrollView(
+      child: Column(
+      mainAxisSize: MainAxisSize.min,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+      Padding(
+      padding: EdgeInsetsDirectional.fromSTEB(16, 40, 16, 0),
+      child: Container(
+      width: MediaQuery.sizeOf(context).width,
+      height: 80,
+      decoration: BoxDecoration(
+      color: FlutterFlowTheme.of(context).primary,
+      borderRadius: BorderRadius.circular(24),
+      ),
+      child: Padding(
+      padding:
+      EdgeInsetsDirectional.fromSTEB(16, 16, 16, 16),
+      child: Column(
+      mainAxisSize: MainAxisSize.min,
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+      Text(
+      'Principais Categorias',
+      style: FlutterFlowTheme.of(context)
+      .headlineMedium
+      .override(
+      fontFamily: 'Readex Pro',
+      color: Colors.white,
+      letterSpacing: 0.0,
+      ),
+      ),
+      ],
+      ),
+      ),
+      ),
+      ),
+      Padding(
+      padding: EdgeInsetsDirectional.fromSTEB(16, 16, 16, 16),
+      child: Column(
+      mainAxisSize: MainAxisSize.min,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+      Material(
+      color: Colors.transparent,
+      elevation: 2,
+      shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(16),
+      ),
+      child: Container(
+      width: MediaQuery.sizeOf(context).width,
+      decoration: BoxDecoration(
+      color: Colors.white,
+      borderRadius: BorderRadius.circular(16),
+      border: Border.all(
+      color: FlutterFlowTheme.of(context).primary,
+      ),
+      ),
+      child: Padding(
+      padding: EdgeInsetsDirectional.fromSTEB(
+      16, 16, 16, 16),
+      child: Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+      Text(
+      'Comunicação',
+      style: FlutterFlowTheme.of(context)
+      .headlineSmall
+      .override(
+      fontFamily: 'Readex Pro',
+      color: FlutterFlowTheme.of(context)
+      .primary,
+      letterSpacing: 0.0,
+      fontWeight: FontWeight.w600,
+      ),
+      ),
+      ListView(
+      padding: EdgeInsets.zero,
+      primary: false,
+      shrinkWrap: true,
+      scrollDirection: Axis.vertical,
+      children: [
+      Text(
+      '1. Dificuldade em iniciar conversas',
+      style: FlutterFlowTheme.of(context)
+      .bodyMedium
+      .override(
+      fontFamily: 'Inter',
+      letterSpacing: 0.0,
+      ),
+      ),
+      Text(
+      '2. Interpretação literal da linguagem',
+      style: FlutterFlowTheme.of(context)
+      .bodyMedium
+      .override(
+      fontFamily: 'Inter',
+      letterSpacing: 0.0,
+      ),
+      ),
+      Text(
+      '3. Dificuldade em manter contato visual',
+      style: FlutterFlowTheme.of(context)
+      .bodyMedium
+      .override(
+      fontFamily: 'Inter',
+      letterSpacing: 0.0,
+      ),
+      ),
+      Text(
+      '4. Uso limitado de gestos',
+      style: FlutterFlowTheme.of(context)
+      .bodyMedium
+      .override(
+      fontFamily: 'Inter',
+      letterSpacing: 0.0,
+      ),
+      ),
+      Text(
+      '5. Ecolalia (repetição de palavras)',
+      style: FlutterFlowTheme.of(context)
+      .bodyMedium
+      .override(
+      fontFamily: 'Inter',
+      letterSpacing: 0.0,
+      ),
+      ),
+      ].divide(SizedBox(height: 8)),
+      ),
+      FFButtonWidget(
+      onPressed: () async {
+      context.pushNamed(
+      'atividades',
+      extra: <String, dynamic>{
+        kTransitionInfoKey: TransitionInfo(
+        hasTransition: true,
+        transitionType: PageTransitionType
+        .rightToLeft,
+        duration:
+        Duration(milliseconds: 500),
+        ),
+        },
+        );
+        },
+        text: 'Ver mais',
+        options: FFButtonOptions(
+        width: MediaQuery.sizeOf(context).width,
+        height: 40,
+        padding: EdgeInsetsDirectional.fromSTEB(
+        0, 0, 0, 0),
+        iconPadding:
+        EdgeInsetsDirectional.fromSTEB(
+        0, 0, 0, 0),
+        color: FlutterFlowTheme.of(context)
+        .primary,
+        textStyle: FlutterFlowTheme.of(context)
+        .bodyMedium
+        .override(
+        fontFamily: 'Inter',
+        color: Colors.white,
+        letterSpacing: 0.0,
+        ),
+        elevation: 0,
+        borderRadius: BorderRadius.circular(20),
+        ),
+        ),
+        ].divide(SizedBox(height: 16)),
+        ),
+        ),
+        ),
+        ),
+        Material(
+        color: Colors.transparent,
+        elevation: 2,
+        shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(16),
+        ),
+        child: Container(
+        width: MediaQuery.sizeOf(context).width,
+        decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(16),
+        border: Border.all(
+        color: FlutterFlowTheme.of(context).primary,
+        ),
+        ),
+        child: Padding(
+        padding: EdgeInsetsDirectional.fromSTEB(
+        16, 16, 16, 16),
+        child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+        Text(
+        'Interação Social',
+        style: FlutterFlowTheme.of(context)
+        .headlineSmall
+        .override(
+        fontFamily: 'Readex Pro',
+        color: FlutterFlowTheme.of(context)
+        .primary,
+        letterSpacing: 0.0,
+        fontWeight: FontWeight.w600,
+        ),
+        ),
+        ListView(
+        padding: EdgeInsets.zero,
+        primary: false,
+        shrinkWrap: true,
+        scrollDirection: Axis.vertical,
+        children: [
+        Text(
+        '6. Dificuldade em fazer amigos',
+        style: FlutterFlowTheme.of(context)
+        .bodyMedium
+        .override(
+        fontFamily: 'Inter',
+        letterSpacing: 0.0,
+        ),
+        ),
+        Text(
+        '7. Falta de empatia aparente',
+        style: FlutterFlowTheme.of(context)
+        .bodyMedium
+        .override(
+        fontFamily: 'Inter',
+        letterSpacing: 0.0,
+        ),
+        ),
+        Text(
+        '8. Preferência por brincar sozinho',
+        style: FlutterFlowTheme.of(context)
+        .bodyMedium
+        .override(
+        fontFamily: 'Inter',
+        letterSpacing: 0.0,
+        ),
+        ),
+        Text(
+        '9. Dificuldade em entender regras sociais',
+        style: FlutterFlowTheme.of(context)
+        .bodyMedium
+        .override(
+        fontFamily: 'Inter',
+        letterSpacing: 0.0,
+        ),
+        ),
+        Text(
+        '10. Ansiedade em situações sociais',
+        style: FlutterFlowTheme.of(context)
+        .bodyMedium
+        .override(
+        fontFamily: 'Inter',
+        letterSpacing: 0.0,
+        ),
+        ),
+        ].divide(SizedBox(height: 8)),
+        ),
+        FFButtonWidget(
+        onPressed: () {
+        print('Button pressed ...');
+        },
+        text: 'Ver mais',
+        options: FFButtonOptions(
+        width: MediaQuery.sizeOf(context).width,
+        height: 40,
+        padding: EdgeInsetsDirectional.fromSTEB(
+        0, 0, 0, 0),
+        iconPadding:
+        EdgeInsetsDirectional.fromSTEB(
+        0, 0, 0, 0),
+        color: FlutterFlowTheme.of(context)
+        .primary,
+        textStyle: FlutterFlowTheme.of(context)
+        .bodyMedium
+        .override(
+        fontFamily: 'Inter',
+        color: Colors.white,
+        letterSpacing: 0.0,
+        ),
+        elevation: 0,
+        borderRadius: BorderRadius.circular(20),
+        ),
+        ),
+        ].divide(SizedBox(height: 16)),
+        ),
+        ),
+        ),
+        ),
+        Material(
+        color: Colors.transparent,
+        elevation: 2,
+        shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(16),
+        ),
+        child: Container(
+        width: MediaQuery.sizeOf(context).width,
+        decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(16),
+        border: Border.all(
+        color: FlutterFlowTheme.of(context).primary,
+        ),
+        ),
+        child: Padding(
+        padding: EdgeInsetsDirectional.fromSTEB(
+        16, 16, 16, 16),
+        child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+        Text(
+        'Comportamentos Repetitivos',
+        style: FlutterFlowTheme.of(context)
+        .headlineSmall
+        .override(
+        fontFamily: 'Readex Pro',
+        color: FlutterFlowTheme.of(context)
+        .primary,
+        letterSpacing: 0.0,
+        fontWeight: FontWeight.w600,
+        ),
+        ),
+        ListView(
+        padding: EdgeInsets.zero,
+        primary: false,
+        shrinkWrap: true,
+        scrollDirection: Axis.vertical,
+        children: [
+        Text(
+        '11. Movimentos repetitivos (estereotipias)',
+        style: FlutterFlowTheme.of(context)
+        .bodyMedium
+        .override(
+        fontFamily: 'Inter',
+        letterSpacing: 0.0,
+        ),
+        ),
+        Text(
+        '12. Apego excessivo a rotinas',
+        style: FlutterFlowTheme.of(context)
+        .bodyMedium
+        .override(
+        fontFamily: 'Inter',
+        letterSpacing: 0.0,
+        ),
+        ),
+        Text(
+        '13. Interesses restritos e intensos',
+        style: FlutterFlowTheme.of(context)
+        .bodyMedium
+        .override(
+        fontFamily: 'Inter',
+        letterSpacing: 0.0,
+        ),
+        ),
+        Text(
+        '14. Alinhamento obsessivo de objetos',
+        style: FlutterFlowTheme.of(context)
+        .bodyMedium
+        .override(
+        fontFamily: 'Inter',
+        letterSpacing: 0.0,
+        ),
+        ),
+        Text(
+        '15. Repetição de frases ou palavras',
+        style: FlutterFlowTheme.of(context)
+        .bodyMedium
+        .override(
+        fontFamily: 'Inter',
+        letterSpacing: 0.0,
+        ),
+        ),
+        ].divide(SizedBox(height: 8)),
+        ),
+        FFButtonWidget(
+        onPressed: () {
+        print('Button pressed ...');
+        },
+        text: 'Ver mais',
+        options: FFButtonOptions(
+        width: MediaQuery.sizeOf(context).width,
+        height: 40,
+        padding: EdgeInsetsDirectional.fromSTEB(
+        0, 0, 0, 0),
+        iconPadding:
+        EdgeInsetsDirectional.fromSTEB(
+        0, 0, 0, 0),
+        color: FlutterFlowTheme.of(context)
+        .primary,
+        textStyle: FlutterFlowTheme.of(context)
+        .bodyMedium
+        .override(
+        fontFamily: 'Inter',
+        color: Colors.white,
+        letterSpacing: 0.0,
+        ),
+        elevation: 0,
+        borderRadius: BorderRadius.circular(20),
+        ),
+        ),
+        ].divide(SizedBox(height: 16)),
+        ),
+        ),
+        ),
+        ),
+        Material(
+        color: Colors.transparent,
+        elevation: 2,
+        shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(16),
+        ),
+        child: Container(
+        width: MediaQuery.sizeOf(context).width,
+        decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(16),
+        border: Border.all(
+        color: FlutterFlowTheme.of(context).primary,
+        ),
+        ),
+        child: Padding(
+        padding: EdgeInsetsDirectional.fromSTEB(
+        16, 16, 16, 16),
+        child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+        Text(
+        'Processamento Sensorial',
+        style: FlutterFlowTheme.of(context)
+        .headlineSmall
+        .override(
+        fontFamily: 'Readex Pro',
+        color: FlutterFlowTheme.of(context)
+        .primary,
+        letterSpacing: 0.0,
+        fontWeight: FontWeight.w600,
+        ),
+        ),
+        ListView(
+        padding: EdgeInsets.zero,
+        primary: false,
+        shrinkWrap: true,
+        scrollDirection: Axis.vertical,
+        children: [
+        Text(
+        '16. Hipersensibilidade a sons',
+        style: FlutterFlowTheme.of(context)
+        .bodyMedium
+        .override(
+        fontFamily: 'Inter',
+        letterSpacing: 0.0,
+        ),
+        ),
+        Text(
+        '17. Aversão a certas texturas',
+        style: FlutterFlowTheme.of(context)
+        .bodyMedium
+        .override(
+        fontFamily: 'Inter',
+        letterSpacing: 0.0,
+        ),
+        ),
+        Text(
+        '18. Fascínio por luzes ou movimentos',
+        style: FlutterFlowTheme.of(context)
+        .bodyMedium
+        .override(
+        fontFamily: 'Inter',
+        letterSpacing: 0.0,
+        ),
+        ),
+        Text(
+        '19. Insensibilidade à dor',
+        style: FlutterFlowTheme.of(context)
+        .bodyMedium
+        .override(
+        fontFamily: 'Inter',
+        letterSpacing: 0.0,
+        ),
+        ),
+        Text(
+        '20. Seletividade alimentar',
+        style: FlutterFlowTheme.of(context)
+        .bodyMedium
+        .override(
+        fontFamily: 'Inter',
+        letterSpacing: 0.0,
+        ),
+        ),
+        ].divide(SizedBox(height: 8)),
+        ),
+        FFButtonWidget(
+        onPressed: () {
+        print('Button pressed ...');
+        },
+        text: 'Ver mais',
+        options: FFButtonOptions(
+        width: MediaQuery.sizeOf(context).width,
+        height: 40,
+        padding: EdgeInsetsDirectional.fromSTEB(
+        0, 0, 0, 0),
+        iconPadding:
+        EdgeInsetsDirectional.fromSTEB(
+        0, 0, 0, 0),
+        color: FlutterFlowTheme.of(context)
+        .primary,
+        textStyle: FlutterFlowTheme.of(context)
+        .bodyMedium
+        .override(
+        fontFamily: 'Inter',
+        color: Colors.white,
+        letterSpacing: 0.0,
+        ),
+        elevation: 0,
+        borderRadius: BorderRadius.circular(20),
+        ),
+        ),
+        ].divide(SizedBox(height: 16)),
+        ),
+        ),
+        ),
+        ),
+        ].divide(SizedBox(height: 24)),
+        ),
+        ),
+        ],
+        ),
+        ),
+        Padding(
+        padding: EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
+        child: FlutterFlowIconButton(
+        borderRadius: 8,
+        buttonSize: 40,
+        icon: Icon(
+        Icons.arrow_back,
+        color: Color(0xFF0B0B0B),
+        size: 24,
+        ),
+        onPressed: () async {
+        context.goNamed('menu');
+        },
+        ),
+        ),
+        ],
+        ),
+        ),
+        ),
+        );
+        }
+        }

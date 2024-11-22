@@ -1,0 +1,526 @@
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+
+import 'biblioteca_model.dart';
+export 'biblioteca_model.dart';
+
+class BibliotecaWidget extends StatefulWidget {
+const BibliotecaWidget({super.key});
+
+@override
+State<BibliotecaWidget> createState() => _BibliotecaWidgetState();
+  }
+
+  class _BibliotecaWidgetState extends State<BibliotecaWidget> {
+    late BibliotecaModel _model;
+
+    final scaffoldKey = GlobalKey<ScaffoldState>();
+
+      @override
+      void initState() {
+      super.initState();
+      _model = createModel(context, () => BibliotecaModel());
+
+      _model.textController ??= TextEditingController();
+      _model.textFieldFocusNode ??= FocusNode();
+
+      WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
+      }
+
+      @override
+      void dispose() {
+      _model.dispose();
+
+      super.dispose();
+      }
+
+      @override
+      Widget build(BuildContext context) {
+      return GestureDetector(
+      onTap: () => FocusScope.of(context).unfocus(),
+      child: Scaffold(
+      key: scaffoldKey,
+      backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+      body: SingleChildScrollView(
+      child: Column(
+      mainAxisSize: MainAxisSize.min,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+      Padding(
+      padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 1),
+      child: Container(
+      width: MediaQuery.sizeOf(context).width,
+      height: 183,
+      decoration: BoxDecoration(
+      gradient: LinearGradient(
+      colors: [Color(0xFF4B39EF), Color(0xFF3A327A)],
+      stops: [0, 1],
+      begin: AlignmentDirectional(0, -1),
+      end: AlignmentDirectional(0, 1),
+      ),
+      ),
+      child: Padding(
+      padding: EdgeInsetsDirectional.fromSTEB(24, 24, 24, 0),
+      child: Column(
+      mainAxisSize: MainAxisSize.min,
+      mainAxisAlignment: MainAxisAlignment.end,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+      Row(
+      mainAxisSize: MainAxisSize.max,
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+      Text(
+      'Biblioteca',
+      textAlign: TextAlign.center,
+      style: FlutterFlowTheme.of(context)
+      .headlineMedium
+      .override(
+      fontFamily: 'Readex Pro',
+      color: FlutterFlowTheme.of(context).info,
+      letterSpacing: 0.0,
+      fontWeight: FontWeight.w600,
+      ),
+      ),
+      ],
+      ),
+      Padding(
+      padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 15),
+      child: Container(
+      width: MediaQuery.sizeOf(context).width,
+      height: 50,
+      decoration: BoxDecoration(
+      color: FlutterFlowTheme.of(context).info,
+      borderRadius: BorderRadius.circular(25),
+      ),
+      child: Padding(
+      padding:
+      EdgeInsetsDirectional.fromSTEB(0, 16, 0, 16),
+      child: Row(
+      mainAxisSize: MainAxisSize.max,
+      children: [
+      Padding(
+      padding: EdgeInsetsDirectional.fromSTEB(
+      15, 0, 0, 0),
+      child: Icon(
+      Icons.search,
+      color: FlutterFlowTheme.of(context)
+      .secondaryText,
+      size: 24,
+      ),
+      ),
+      Expanded(
+      child: TextFormField(
+      controller: _model.textController,
+      focusNode: _model.textFieldFocusNode,
+      autofocus: false,
+      obscureText: false,
+      decoration: InputDecoration(
+      hintText:
+      'Pesquisar artigos, livros...',
+      hintStyle: FlutterFlowTheme.of(context)
+      .bodyMedium
+      .override(
+      fontFamily: 'Inter',
+      letterSpacing: 0.0,
+      ),
+      enabledBorder: InputBorder.none,
+      focusedBorder: InputBorder.none,
+      errorBorder: InputBorder.none,
+      focusedErrorBorder: InputBorder.none,
+      ),
+      style: FlutterFlowTheme.of(context)
+      .bodyMedium
+      .override(
+      fontFamily: 'Inter',
+      letterSpacing: 0.0,
+      ),
+      minLines: 1,
+      validator: _model.textControllerValidator
+      .asValidator(context),
+      ),
+      ),
+      ].divide(SizedBox(width: 12)),
+      ),
+      ),
+      ),
+      ),
+      ].divide(SizedBox(height: 16)),
+      ),
+      ),
+      ),
+      ),
+      Container(
+      width: MediaQuery.sizeOf(context).width,
+      decoration: BoxDecoration(
+      color: FlutterFlowTheme.of(context).secondaryBackground,
+      ),
+      child: Padding(
+      padding: EdgeInsetsDirectional.fromSTEB(24, 24, 24, 0),
+      child: Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+      Text(
+      'Categorias',
+      style: FlutterFlowTheme.of(context)
+      .headlineSmall
+      .override(
+      fontFamily: 'Readex Pro',
+      color: FlutterFlowTheme.of(context).primaryText,
+      letterSpacing: 0.0,
+      ),
+      ),
+      Wrap(
+      spacing: 8,
+      runSpacing: 8,
+      alignment: WrapAlignment.center,
+      crossAxisAlignment: WrapCrossAlignment.start,
+      direction: Axis.horizontal,
+      runAlignment: WrapAlignment.start,
+      verticalDirection: VerticalDirection.down,
+      clipBehavior: Clip.none,
+      children: [
+      Container(
+      decoration: BoxDecoration(
+      color: Color(0xFFE3F2FD),
+      borderRadius: BorderRadius.circular(20),
+      ),
+      child: Padding(
+      padding:
+      EdgeInsetsDirectional.fromSTEB(8, 16, 8, 16),
+      child: Text(
+      'Diagnóstico Precoce',
+      style: FlutterFlowTheme.of(context)
+      .bodyMedium
+      .override(
+      fontFamily: 'Inter',
+      color: Color(0xFF1565C0),
+      letterSpacing: 0.0,
+      ),
+      ),
+      ),
+      ),
+      Container(
+      decoration: BoxDecoration(
+      color: Color(0xFFFFF3E0),
+      borderRadius: BorderRadius.circular(20),
+      ),
+      child: Padding(
+      padding:
+      EdgeInsetsDirectional.fromSTEB(8, 16, 8, 16),
+      child: Text(
+      'Intervenção',
+      style: FlutterFlowTheme.of(context)
+      .bodyMedium
+      .override(
+      fontFamily: 'Inter',
+      color: Color(0xFFEF6C00),
+      letterSpacing: 0.0,
+      ),
+      ),
+      ),
+      ),
+      Container(
+      decoration: BoxDecoration(
+      color: Color(0xFFE8F5E9),
+      borderRadius: BorderRadius.circular(20),
+      ),
+      child: Padding(
+      padding:
+      EdgeInsetsDirectional.fromSTEB(8, 16, 8, 16),
+      child: Text(
+      'Desenvolvimento',
+      style: FlutterFlowTheme.of(context)
+      .bodyMedium
+      .override(
+      fontFamily: 'Inter',
+      color: Color(0xFF2E7D32),
+      letterSpacing: 0.0,
+      ),
+      ),
+      ),
+      ),
+      Container(
+      decoration: BoxDecoration(
+      color: Color(0xFFF3E5F5),
+      borderRadius: BorderRadius.circular(20),
+      ),
+      child: Padding(
+      padding:
+      EdgeInsetsDirectional.fromSTEB(8, 16, 8, 16),
+      child: Text(
+      'Educação',
+      style: FlutterFlowTheme.of(context)
+      .bodyMedium
+      .override(
+      fontFamily: 'Inter',
+      color: Color(0xFF7B1FA2),
+      letterSpacing: 0.0,
+      ),
+      ),
+      ),
+      ),
+      ],
+      ),
+      Text(
+      'Artigos Recentes',
+      style: FlutterFlowTheme.of(context)
+      .headlineSmall
+      .override(
+      fontFamily: 'Readex Pro',
+      color: FlutterFlowTheme.of(context).primaryText,
+      letterSpacing: 0.0,
+      ),
+      ),
+      Material(
+      color: Colors.transparent,
+      elevation: 2,
+      shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(16),
+      ),
+      child: Container(
+      width: MediaQuery.sizeOf(context).width,
+      decoration: BoxDecoration(
+      color: FlutterFlowTheme.of(context)
+      .secondaryBackground,
+      borderRadius: BorderRadius.circular(16),
+      ),
+      child: Padding(
+      padding:
+      EdgeInsetsDirectional.fromSTEB(16, 16, 16, 16),
+      child: Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+      Row(
+      mainAxisSize: MainAxisSize.max,
+      children: [
+      Container(
+      width: 100,
+      height: 140,
+      decoration: BoxDecoration(
+      borderRadius: BorderRadius.circular(8),
+      ),
+      child: ClipRRect(
+      borderRadius: BorderRadius.circular(8),
+      child: Image.network(
+      'https://images.unsplash.com/photo-1587293094245-15c3520d3894?w=500&h=500',
+      width: 100,
+      height: 140,
+      fit: BoxFit.cover,
+      ),
+      ),
+      ),
+      ].divide(SizedBox(width: 16)),
+      ),
+      ].divide(SizedBox(height: 16)),
+      ),
+      ),
+      ),
+      ),
+      Material(
+      color: Colors.transparent,
+      elevation: 2,
+      shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(16),
+      ),
+      child: Container(
+      width: MediaQuery.sizeOf(context).width,
+      decoration: BoxDecoration(
+      color: FlutterFlowTheme.of(context)
+      .secondaryBackground,
+      borderRadius: BorderRadius.circular(16),
+      ),
+      child: Padding(
+      padding:
+      EdgeInsetsDirectional.fromSTEB(16, 16, 16, 16),
+      child: Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+      Row(
+      mainAxisSize: MainAxisSize.max,
+      children: [
+      Container(
+      width: 100,
+      height: 140,
+      decoration: BoxDecoration(
+      borderRadius: BorderRadius.circular(8),
+      ),
+      child: ClipRRect(
+      borderRadius: BorderRadius.circular(8),
+      child: Image.network(
+      'https://images.unsplash.com/photo-1573671935872-7c0e2d096245?w=500&h=500',
+      width: 100,
+      height: 140,
+      fit: BoxFit.cover,
+      ),
+      ),
+      ),
+      ].divide(SizedBox(width: 16)),
+      ),
+      ].divide(SizedBox(height: 16)),
+      ),
+      ),
+      ),
+      ),
+      Text(
+      'Livros Recomendados',
+      style: FlutterFlowTheme.of(context)
+      .headlineSmall
+      .override(
+      fontFamily: 'Readex Pro',
+      color: FlutterFlowTheme.of(context).primaryText,
+      letterSpacing: 0.0,
+      ),
+      ),
+      Container(
+      height: 280,
+      child: ListView(
+      padding: EdgeInsets.fromLTRB(
+      0,
+      0,
+      0,
+      0,
+      ),
+      primary: false,
+      shrinkWrap: true,
+      scrollDirection: Axis.horizontal,
+      children: [
+      Column(
+      mainAxisSize: MainAxisSize.min,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+      Material(
+      color: Colors.transparent,
+      elevation: 3,
+      shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(12),
+      ),
+      child: Container(
+      width: 160,
+      height: 220,
+      decoration: BoxDecoration(
+      borderRadius: BorderRadius.circular(12),
+      ),
+      child: ClipRRect(
+      borderRadius: BorderRadius.circular(12),
+      child: Image.network(
+      'https://images.unsplash.com/photo-1583526241256-cb18e8635e5b?w=500&h=500',
+      width: 160,
+      height: 220,
+      fit: BoxFit.cover,
+      ),
+      ),
+      ),
+      ),
+      Text(
+      'Temple Grandin',
+      style: FlutterFlowTheme.of(context)
+      .bodySmall
+      .override(
+      fontFamily: 'Inter',
+      color: FlutterFlowTheme.of(context)
+      .secondaryText,
+      letterSpacing: 0.0,
+      ),
+      ),
+      ].divide(SizedBox(height: 8)),
+      ),
+      Column(
+      mainAxisSize: MainAxisSize.min,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+      Material(
+      color: Colors.transparent,
+      elevation: 3,
+      shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(12),
+      ),
+      child: Container(
+      width: 160,
+      height: 220,
+      decoration: BoxDecoration(
+      borderRadius: BorderRadius.circular(12),
+      ),
+      child: ClipRRect(
+      borderRadius: BorderRadius.circular(12),
+      child: Image.network(
+      'https://images.unsplash.com/photo-1437751068958-82e6fccc9360?w=500&h=500',
+      width: 160,
+      height: 220,
+      fit: BoxFit.cover,
+      ),
+      ),
+      ),
+      ),
+      Text(
+      'Oliver Sacks',
+      style: FlutterFlowTheme.of(context)
+      .bodySmall
+      .override(
+      fontFamily: 'Inter',
+      color: FlutterFlowTheme.of(context)
+      .secondaryText,
+      letterSpacing: 0.0,
+      ),
+      ),
+      ].divide(SizedBox(height: 8)),
+      ),
+      Column(
+      mainAxisSize: MainAxisSize.min,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+      Material(
+      color: Colors.transparent,
+      elevation: 3,
+      shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(12),
+      ),
+      child: Container(
+      width: 160,
+      height: 220,
+      decoration: BoxDecoration(
+      borderRadius: BorderRadius.circular(12),
+      ),
+      child: ClipRRect(
+      borderRadius: BorderRadius.circular(12),
+      child: Image.network(
+      'https://images.unsplash.com/photo-1452277852297-84752bc9f809?w=500&h=500',
+      width: 160,
+      height: 220,
+      fit: BoxFit.cover,
+      ),
+      ),
+      ),
+      ),
+      Text(
+      'Steve Silberman',
+      style: FlutterFlowTheme.of(context)
+      .bodySmall
+      .override(
+      fontFamily: 'Inter',
+      color: FlutterFlowTheme.of(context)
+      .secondaryText,
+      letterSpacing: 0.0,
+      ),
+      ),
+      ].divide(SizedBox(height: 8)),
+      ),
+      ].divide(SizedBox(width: 16)),
+      ),
+      ),
+      ].divide(SizedBox(height: 24)),
+      ),
+      ),
+      ),
+      ],
+      ),
+      ),
+      ),
+      );
+      }
+      }
